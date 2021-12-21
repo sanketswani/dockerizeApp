@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build ../angular-poc --file Dockerfile --tag testrepo:$(date +%s)
+      run: docker build .. --file Dockerfile --tag testrepo:$(date +%s)
