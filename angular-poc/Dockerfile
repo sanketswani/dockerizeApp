@@ -4,7 +4,7 @@ RUN mkdir -p /app
 WORKDIR /app
 COPY ./angular-poc/package.json /app
 RUN npm install
-COPY . /app
+COPY ./angular-poc /app
 RUN npm run build --prod
 
 # Stage 2
