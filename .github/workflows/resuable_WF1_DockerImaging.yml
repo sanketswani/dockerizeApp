@@ -1,0 +1,31 @@
+name: Resuable workflow1
+
+on:
+ workflow_call:
+    inputs:
+      firstInput:
+        required: true
+        type: string
+    outputs:
+      firstOutput:
+        description: "The first output string"
+        value: ${{ jobs.example_job.outputs.output1 }}
+    
+jobs:
+  build:
+    name: creates docker image of project
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build angular-poc --tag testrepo:$(date +%s)
+      
+  output-job:
+    name: take input and generate output
+    runs-on: ubuntu-latest
+     # Map the job outputs to step outputs
+    outputs:
+      output1: ${{ steps.step1.outputs.firstword }}
+    steps:
+      - id: step1
+        run: echo "::set-output name=firstOutput::" + ${{ inputs.firstInput }}
