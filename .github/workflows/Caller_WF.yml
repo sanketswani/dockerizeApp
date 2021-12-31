@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: dockerizeApp/.github/workflows/resuable_WF1_DockerImaging.yml@main
+    uses: sanketswani/dockerizeApp/.github/workflows/resuable_WF1_DockerImaging.yml@main
     with:
       firstInput: Hello World
   print-output:
