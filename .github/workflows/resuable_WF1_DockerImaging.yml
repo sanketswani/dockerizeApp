@@ -9,7 +9,7 @@ on:
     outputs:
       firstOutput:
         description: "The first output string"
-        value: ${{ jobs.example_job.outputs.output1 }}
+        value: ${{ jobs.output-job.outputs.output1 }}
     
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
      # Map the job outputs to step outputs
     outputs:
-      output1: ${{ steps.step1.outputs.firstword }}
+      output1: ${{ steps.step1.outputs.firstOutput }}
     steps:
       - id: step1
-        run: echo "::set-output name=firstOutput::" + ${{ inputs.firstInput }}
+        run: echo "::set-output name=firstOutput::${{ inputs.firstInput }}"
