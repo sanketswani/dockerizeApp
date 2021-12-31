@@ -12,13 +12,13 @@ on:
         value: ${{ jobs.output-job.outputs.output1 }}
     
 jobs:
-  build:
-    name: creates docker image of project
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build angular-poc --tag testrepo:$(date +%s)
+  #build:
+   # name: creates docker image of project
+   # runs-on: ubuntu-latest
+   # steps:
+   # - uses: actions/checkout@v2
+   # - name: Build the Docker image
+   #   run: docker build angular-poc --tag testrepo:$(date +%s)
       
   output-job:
     name: take input and generate output
