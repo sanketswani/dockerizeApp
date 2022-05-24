@@ -6,6 +6,14 @@ on:
       firstInput:
         required: true
         type: string
+      APP_SUBMODULE:
+        type: string
+        description: "SUB Module to build"
+        required: false
+      ACR_ADDR:
+        type: string
+        description: "ACR hostname"
+        required: true
     outputs:
       firstOutput:
         description: "The first output string"
@@ -28,4 +36,4 @@ jobs:
       output1: ${{ steps.step1.outputs.firstOutput }}
     steps:
       - id: step1
-        run: echo "::set-output name=firstOutput::${{ inputs.firstInput }}"
+        run: echo "::set-output name=firstOutput::${{ inputs.firstInput }}+${{ inputs.APP_SUBMODULE }}+${{ inputs.ACR_ADDR }}"
