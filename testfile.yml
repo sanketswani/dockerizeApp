@@ -1,2 +1,2 @@
 configmap:
-    ABC: "test"
+  ABC: V0.1.1
