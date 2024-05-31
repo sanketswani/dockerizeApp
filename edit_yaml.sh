@@ -4,4 +4,4 @@
 FILE="testfile.yml"
 
 # updating configmap
-yq -i '.configmap.ABC = "V0.1.1"' $FILE
+yq -i -y '.configmap.ABC = "V0.1.1"' $FILE
