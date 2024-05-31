@@ -36,7 +36,7 @@ jobs:
         run: chmod +x edit_yaml.sh
 
       - name: Run edit_yaml.sh
-        run: ./edit_yaml.sh
+        run: ./edit_yaml.sh "V1.0.0"
 
       - name: Commit changes
         run: |
