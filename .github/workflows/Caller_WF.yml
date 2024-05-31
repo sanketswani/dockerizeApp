@@ -37,9 +37,10 @@ jobs:
         run: chmod +x edit_yaml.sh
 
       - name: Run edit_yaml.sh
+        env:
+          VERSION: v1.10.0
         run: |
           FILE="testfile.yml"
-          VERSION=10
           yq -i -y '.configmap.ABC = $VERSION' $FILE
         shell: bash
 
