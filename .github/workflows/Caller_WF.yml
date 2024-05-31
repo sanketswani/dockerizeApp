@@ -38,7 +38,7 @@ jobs:
       - name: Run edit_yaml.sh
         run: |
           FILE="testfile.yml"
-          yq -i -y ".configmap.ABC = v1.0.0" $FILE
+          yq -i -y '.configmap.ABC = "v1.0.0"' $FILE
         shell: bash
 
       - name: Commit changes
