@@ -30,6 +30,7 @@ jobs:
       - name: install pip and run shell
         run: |
           pip install yq
+          ls -lr
 
       - name: Make script executable
         run: chmod +x edit_yaml.sh
