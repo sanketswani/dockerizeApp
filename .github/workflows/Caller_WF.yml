@@ -40,7 +40,7 @@ jobs:
         run: |
           FILE="testfile.yml"
           VERSION="v1.0.1"
-          yq -i -y '.configmap.ABC = "$VERSION"' $FILE
+          yq -i -y '.configmap.ABC = $VERSION' $FILE
         shell: bash
 
       - name: Commit changes
