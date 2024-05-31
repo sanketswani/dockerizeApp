@@ -1,2 +1,2 @@
 configmap:
-  ABC: $VERSION
+  ABC: v1.10.0
