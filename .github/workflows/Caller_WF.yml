@@ -2,6 +2,7 @@ name: Call a reusable workflow
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   # call-workflow:
@@ -38,7 +39,8 @@ jobs:
       - name: Run edit_yaml.sh
         run: |
           FILE="testfile.yml"
-          yq -i -y '.configmap.ABC = "v1.0.0"' $FILE
+          VERSION="v1.0.1"
+          yq -i -y '.configmap.ABC = "$VERSION"' $FILE
         shell: bash
 
       - name: Commit changes
